@@ -1,0 +1,23 @@
+{
+  "name": "email_service",
+  "version": "1.0.0",
+  "description": "\"Easy send email with many services\"",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "quang-vo",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/node": "^12.0.7",
+    "class-validator": "^0.9.1",
+    "dotenv": "^8.0.0",
+    "i": "^0.3.6",
+    "mailchimp-api-v3": "^1.13.0",
+    "mocha": "^6.1.4",
+    "npm": "^6.9.0",
+    "typescript": "^3.5.1"
+  }
+}
