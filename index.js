@@ -5,11 +5,17 @@ var mailchimp_1 = require("./mailchimp/mailchimp");
 var sendgrid_1 = require("./sendgrid/sendgrid");
 dotenv.config();
 var mailchimp = new mailchimp_1["default"]();
-var inputs = {
-    to: 'phamlegiabao96@gmail.com',
-    from: 'vothanhtruongquang@gmail.com',
-    subject: 'Sending with Twilio SendGrid is Fun',
-    text: 'and easy to do anywhere, even with Node.js',
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>'
+var sendEmail = function (type, inputs) {
+    if (type === 'SENDGRID')
+        return sendgrid_1.sendEmailWithSendgrid(inputs);
+    if (type === 'MAILCHIMP')
+        return;
 };
-sendgrid_1.sendEmailWithSendgrid(inputs);
+sendEmail('SENDGRID', {
+    to: 'vothanhtruongquang@gmail.com',
+    from: 'phamlegiabao96@gmail.com',
+    subject: 'Test',
+    text: '',
+    html: '<h1>Test thu xem sao</h1>'
+});
+exports["default"] = sendEmail;

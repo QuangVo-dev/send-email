@@ -12,4 +12,12 @@ const sendEmail = (type, inputs: MailDTO) => {
     if (type === 'MAILCHIMP') return
 }
 
+sendEmail('SENDGRID', {
+    to: 'vothanhtruongquang@gmail.com',
+    from: 'phamlegiabao96@gmail.com',
+    subject: 'Test',
+    text: '',
+    html: '<h1>Test thu xem sao</h1>',
+})
+
 export default sendEmail
