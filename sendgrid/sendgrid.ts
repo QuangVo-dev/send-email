@@ -8,7 +8,6 @@ export const sendEmailWithSendgrid = async (inputs: MailDTO) => {
         to: inputs.to,
         from: inputs.from,
         subject: inputs.subject,
-        // text: inputs.text,
         html: inputs.html,
     };
     try {

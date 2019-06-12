@@ -1,5 +1,5 @@
 {
-  "name": "email_service",
+  "name": "quang-email-service",
   "version": "1.0.0",
   "description": "\"Easy send email with many services\"",
   "main": "index.ts",

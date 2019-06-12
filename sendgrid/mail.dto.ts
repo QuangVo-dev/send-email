@@ -11,5 +11,5 @@ export class MailDTO {
     // @IsNotEmpty({ message: 'Subject of email cannot be empty' })
     subject: string
     text?: string
-    html?: string
+    html: string
 }
