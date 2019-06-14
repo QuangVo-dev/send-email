@@ -45,16 +45,3 @@ class MailService {
 
 export default MailService
 
-
-const mail = new MailService({
-    sendgrid: {
-        apiKey: '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'
-    }
-})
-mail.sendEmail({
-    from: 'phamlegiabao96@gmail.com',
-    to: 'vothanhtruongquang@gmail.com',
-    subject: 'ngon',
-    content: '<p>f</p>'
-})
-
