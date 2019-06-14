@@ -37,7 +37,8 @@ class MailService {
         }
 
         for (let i in this.config) {
-            if (this.config[i].apiKey.length > 0) this.sendEmailWithService(i, this.config[i].apiKey, msg)
+            if (this.config[i].apiKey.length == 0) continue;
+            else this.sendEmailWithService(i, this.config[i].apiKey, msg)
         }
 
     }

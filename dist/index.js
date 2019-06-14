@@ -19,7 +19,9 @@ class MailService {
                 content: inputs.content
             };
             for (let i in this.config) {
-                if (this.config[i].apiKey.length > 0)
+                if (this.config[i].apiKey.length == 0)
+                    continue;
+                else
                     this.sendEmailWithService(i, this.config[i].apiKey, msg);
             }
         };
@@ -38,15 +40,4 @@ class MailService {
     }
 }
 exports.default = MailService;
-const mail = new MailService({
-    sendgrid: {
-        apiKey: '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'
-    }
-});
-mail.sendEmail({
-    from: 'phamlegiabao96@gmail.com',
-    to: 'vothanhtruongquang@gmail.com',
-    subject: 'ngon',
-    content: '<p>f</p>'
-});
 //# sourceMappingURL=index.js.map
