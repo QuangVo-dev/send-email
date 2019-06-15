@@ -24,6 +24,9 @@ class MailService {
         if (service == 'mailchimp') {
 
         }
+        if (service == 'gmail') {
+            
+        }
         throw new Error('Mail service currenly not supported')
     }
 
