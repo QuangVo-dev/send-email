@@ -10,4 +10,3 @@ class MailchimpService {
     }
 }
 exports.default = MailchimpService;
-//# sourceMappingURL=mailchimp.js.map

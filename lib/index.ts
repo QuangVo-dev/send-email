@@ -1,9 +1,9 @@
 import { sendEmailWithSendgrid } from './sendgrid/sendgrid'
-import { MailDTO } from './sendgrid/mail.dto'
+import { MailData } from '@sendgrid/helpers/classes/mail';
 
 
 class MailService {
-    config;
+    config: any;
     constructor(config: object) {
         this.config = {
             mailchimp: {
@@ -30,21 +30,14 @@ class MailService {
         throw new Error('Mail service currenly not supported')
     }
 
-    sendEmail = (inputs: MailDTO) => {
-        const msg: any = {
-            from: inputs.from,
-            to: inputs.to,
-            subject: inputs.subject,
-            content: inputs.content
-        }
+    sendEmail = (inputs: MailData) => {
 
         for (let i in this.config) {
             if (this.config[i].apiKey.length == 0) continue;
-            else this.sendEmailWithService(i, this.config[i].apiKey, msg)
+            else this.sendEmailWithService(i, this.config[i].apiKey, inputs)
         }
 
     }
 }
 
 export default MailService
-

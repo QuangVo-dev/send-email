@@ -1,32 +1,39 @@
 "use strict";
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const sgMail = __importStar(require("@sendgrid/mail"));
-exports.sendEmailWithSendgrid = async (apiKey, inputs) => {
+const sgMail = require("@sendgrid/mail");
+exports.sendEmailWithSendgrid = (apiKey, inputs) => __awaiter(this, void 0, void 0, function* () {
     sgMail.setApiKey(apiKey);
     const msg = {
         to: inputs.to,
         from: inputs.from,
         subject: inputs.subject,
-        content: [
-            {
-                type: 'text/html',
-                value: inputs.content,
-            },
-        ]
+        // text: inputs.text,
+        html: inputs.html
     };
+    // const msg: MailData = {
+    //     to: inputs.to,
+    //     from: inputs.from,
+    //     subject: inputs.subject,
+    //     content: [
+    //         {
+    //             type: 'text/html',
+    //             value: inputs.content,
+    //         }
+    //     ]
+    // };
     try {
-        await sgMail.send(msg);
+        yield sgMail.send(msg);
         console.info('Send Email with Sendgrid successfully');
     }
     catch (err) {
         console.error(err.response.body.errors);
     }
-};
-//# sourceMappingURL=sendgrid.js.map
+});

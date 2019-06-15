@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// import MailchimpService from './mailchimp/mailchimp';
 const sendgrid_1 = require("./sendgrid/sendgrid");
 class MailService {
     constructor(config) {
@@ -10,20 +9,16 @@ class MailService {
             }
             if (service == 'mailchimp') {
             }
+            if (service == 'gmail') {
+            }
             throw new Error('Mail service currenly not supported');
         };
         this.sendEmail = (inputs) => {
-            const msg = {
-                from: inputs.from,
-                to: inputs.to,
-                subject: inputs.subject,
-                content: inputs.content
-            };
             for (let i in this.config) {
                 if (this.config[i].apiKey.length == 0)
                     continue;
                 else
-                    this.sendEmailWithService(i, this.config[i].apiKey, msg);
+                    this.sendEmailWithService(i, this.config[i].apiKey, inputs);
             }
         };
         this.config = {
@@ -41,4 +36,3 @@ class MailService {
     }
 }
 exports.default = MailService;
-//# sourceMappingURL=index.js.map
