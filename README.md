@@ -29,6 +29,7 @@ const email = new MailService({
 
 email.send(from, to, subject, content)
 
+````
 
 Release Notes
 -------------
