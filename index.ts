@@ -1,4 +1,3 @@
-import MailchimpService from './mailchimp/mailchimp';
 import { sendEmailWithSendgrid } from './sendgrid/sendgrid'
 import { MailDTO } from './sendgrid/mail.dto'
 

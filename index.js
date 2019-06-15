@@ -1,10 +1,11 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 // import MailchimpService from './mailchimp/mailchimp';
-const sendgrid_1 = require("./sendgrid/sendgrid");
-class MailService {
-    constructor(config) {
-        this.sendEmailWithService = (service, apiKey, data) => {
+var sendgrid_1 = require("./sendgrid/sendgrid");
+var MailService = /** @class */ (function () {
+    function MailService(config) {
+        var _this = this;
+        this.sendEmailWithService = function (service, apiKey, data) {
             if (service == 'sendgrid') {
                 return sendgrid_1.sendEmailWithSendgrid(apiKey, data);
             }
@@ -12,18 +13,18 @@ class MailService {
             }
             throw new Error('Mail service currenly not supported');
         };
-        this.sendEmail = (inputs) => {
-            const msg = {
+        this.sendEmail = function (inputs) {
+            var msg = {
                 from: inputs.from,
                 to: inputs.to,
                 subject: inputs.subject,
                 content: inputs.content
             };
-            for (let i in this.config) {
-                if (this.config[i].apiKey.length == 0)
+            for (var i in _this.config) {
+                if (_this.config[i].apiKey.length == 0)
                     continue;
                 else
-                    this.sendEmailWithService(i, this.config[i].apiKey, msg);
+                    _this.sendEmailWithService(i, _this.config[i].apiKey, msg);
             }
         };
         this.config = {
@@ -39,6 +40,6 @@ class MailService {
         else
             throw new Error('Config file should be an object with services');
     }
-}
-exports.default = MailService;
-//# sourceMappingURL=index.js.map
+    return MailService;
+}());
+exports["default"] = MailService;
