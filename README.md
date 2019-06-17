@@ -9,10 +9,11 @@ Installation
 -----
 ```
 npm install --save quang-email-service
+```
 
 
 Usage
-----
+-----
 In Javascript: 
 const MailService = require('quang-email-service').default
 
