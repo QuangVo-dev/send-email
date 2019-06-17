@@ -12,7 +12,7 @@ const mandrill_api_1 = require("mandrill-api");
 exports.sendEmailWithMandrill = (apiKey, inputs) => __awaiter(this, void 0, void 0, function* () {
     const mandrillClient = new mandrill_api_1.Mandrill(apiKey);
     const msg = {
-        "html": inputs.content,
+        "html": inputs.html,
         "subject": inputs.subject,
         "from_email": inputs.from,
         "to": [

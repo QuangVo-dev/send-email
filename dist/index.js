@@ -15,7 +15,7 @@ class MailService {
             }
             throw new Error('Mail service currenly not supported');
         };
-        this.sendEmail = (inputs) => {
+        this.send = (inputs) => {
             for (let i in this.config) {
                 if (this.config[i].apiKey.length == 0)
                     continue;

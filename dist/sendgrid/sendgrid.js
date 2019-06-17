@@ -15,20 +15,8 @@ exports.sendEmailWithSendgrid = (apiKey, inputs) => __awaiter(this, void 0, void
         to: inputs.to,
         from: inputs.from,
         subject: inputs.subject,
-        // text: inputs.text,
         html: inputs.html
     };
-    // const msg: MailData = {
-    //     to: inputs.to,
-    //     from: inputs.from,
-    //     subject: inputs.subject,
-    //     content: [
-    //         {
-    //             type: 'text/html',
-    //             value: inputs.content,
-    //         }
-    //     ]
-    // };
     try {
         yield sgMail.send(msg);
         console.info('Send Email with Sendgrid successfully');

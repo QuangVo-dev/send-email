@@ -32,7 +32,7 @@ class MailService {
         throw new Error('Mail service currenly not supported')
     }
 
-    sendEmail = (inputs: MailData) => {
+    send = (inputs: MailData) => {
 
         for (let i in this.config) {
             if (this.config[i].apiKey.length == 0) continue;
