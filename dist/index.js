@@ -1,13 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const sendgrid_1 = require("./sendgrid/sendgrid");
+const mailchimp_1 = require("./mailchimp/mailchimp");
 class MailService {
     constructor(config) {
         this.sendEmailWithService = (service, apiKey, data) => {
             if (service == 'sendgrid') {
                 return sendgrid_1.sendEmailWithSendgrid(apiKey, data);
             }
-            if (service == 'mailchimp') {
+            if (service == 'mandrill') {
+                return mailchimp_1.sendEmailWithMandrill(apiKey, data);
             }
             if (service == 'gmail') {
             }

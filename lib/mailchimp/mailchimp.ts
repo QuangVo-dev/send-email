@@ -1,16 +1,25 @@
-import Mailchimp = require('mailchimp-api-v3')
+import { Mandrill } from 'mandrill-api'
 
-
-class MailchimpService {
-    mailchimp: any
-    constructor(API_KEY:any = process.env.MAILCHIMP) {
-        this.mailchimp = new Mailchimp(API_KEY)
+export const sendEmailWithMandrill = async (apiKey: string, inputs: any) => {
+    const mandrillClient = new Mandrill(apiKey);
+    const msg = {
+        "html": inputs.content,
+        "subject": inputs.subject,
+        "from_email": inputs.from,
+        "to": [
+            {
+                "email": inputs.to,
+                "type": "to"
+            }
+        ]
     }
-
-    test = () => {
-        console.log(this.mailchimp)
-    }
-
+    return new Promise((resolve, reject) => {
+        mandrillClient.messages.send({"message": msg}, result => {
+            resolve(result)
+            console.info('Send email with Mandrill successfully')
+        }, e => {
+            console.error(e)
+            reject(e)
+        })
+    })
 }
-
-export default MailchimpService

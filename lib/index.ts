@@ -1,4 +1,5 @@
 import { sendEmailWithSendgrid } from './sendgrid/sendgrid'
+import { sendEmailWithMandrill } from './mailchimp/mailchimp'
 import MailData from '@sendgrid/helpers/classes/mail';
 
 
@@ -22,11 +23,11 @@ class MailService {
         if (service == 'sendgrid') {
             return sendEmailWithSendgrid(apiKey, data)
         }
-        if (service == 'mailchimp') {
-
+        if (service == 'mandrill') {
+            return sendEmailWithMandrill(apiKey, data)
         }
         if (service == 'gmail') {
-            
+
         }
         throw new Error('Mail service currenly not supported')
     }

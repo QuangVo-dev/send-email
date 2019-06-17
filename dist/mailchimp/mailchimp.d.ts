@@ -1,6 +1,1 @@
-declare class MailchimpService {
-    mailchimp: any;
-    constructor(API_KEY?: any);
-    test: () => void;
-}
-export default MailchimpService;
+export declare const sendEmailWithMandrill: (apiKey: string, inputs: any) => Promise<unknown>;

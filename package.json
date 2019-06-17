@@ -1,6 +1,6 @@
 {
   "name": "quang-email-service",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "\"Easy send email with many services\"",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,8 +24,12 @@
     "extsprintf": "^1.4.0",
     "i": "^0.3.6",
     "mailchimp-api-v3": "^1.13.0",
+    "mandrill-api": "^1.0.45",
     "mocha": "^6.1.4",
     "npm": "^6.9.0",
     "typescript": "^3.5.1"
+  },
+  "devDependencies": {
+    "@types/mandrill-api": "^1.0.30"
   }
 }
