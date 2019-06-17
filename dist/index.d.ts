@@ -1,4 +1,4 @@
-import { MailData } from '@sendgrid/helpers/classes/mail';
+import MailData from '@sendgrid/helpers/classes/mail';
 declare class MailService {
     config: any;
     constructor(config: object);

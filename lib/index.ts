@@ -1,5 +1,6 @@
 import { sendEmailWithSendgrid } from './sendgrid/sendgrid'
-import { MailData } from '@sendgrid/helpers/classes/mail';
+import MailData from '@sendgrid/helpers/classes/mail';
+
 
 
 class MailService {

@@ -3,6 +3,7 @@ Introduction
 -----
 ```
 Easily send email with many services, currently supported send email with sendgrid
+```
 will support mailchimp and gmail, send message with sendgrid in near future
 ````
 Installation
@@ -14,6 +15,13 @@ npm install --save quang-email-service
 
 Usage
 -----
+```
+In Javascript: 
+const MailService = require('./dist/index').default
+
+```
+In Typescript:
+import MailService from 'quang-email-service'
 
 ```
 const email = new MailService({
@@ -21,7 +29,7 @@ const email = new MailService({
         apiKey: 'sendgrid-apiKey'
     },
     mandrill: {
-        apiKey: 'sendgrid-apiKey'
+        apiKey: 'mandrill-apikey'
     },
 });
 
@@ -30,10 +38,3 @@ const email = new MailService({
 email.send(from, to, subject, content)
 
 ````
-
-Release Notes
--------------
-
-```
-Fix bug cannot import from javascript files
-```
