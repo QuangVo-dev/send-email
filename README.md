@@ -7,8 +7,9 @@ will support mailchimp and gmail, send message with sendgrid in near future
 
 Installation
 -----
-npm install --save quang-email-service
 ```
+npm install --save quang-email-service
+
 
 Usage
 ----
