@@ -9,7 +9,7 @@ export const sendEmailWithSendgrid = async (apiKey: string, inputs: any) => {
         html: inputs.html
     };
     try {
-        await sgMail.send(msg)
+        sgMail.send(msg)
         console.info('Send Email with Sendgrid successfully')
     } catch (err) {
         console.error(err.response.body.errors)

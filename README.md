@@ -40,6 +40,11 @@ const email = new MailService({
 
 ...
 
-email.send(from, to, subject, content)
+email.send({
+    from: from_email,
+    to: to_email,
+    subject: 'email-subject',
+    html: 'email content in HTML'
+})
 
 ````

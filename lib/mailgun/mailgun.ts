@@ -14,6 +14,7 @@ export const sendEmailWithMailgun = (apiKey: string, inputs: any, domain: string
                 console.error(err)
                 reject(err)
             } else {
+                console.info('Send Email with Mailgun successfully')
                 resolve(body)
             }
         })
