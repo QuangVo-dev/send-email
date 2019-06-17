@@ -3,7 +3,7 @@ import { Mandrill } from 'mandrill-api'
 export const sendEmailWithMandrill = async (apiKey: string, inputs: any) => {
     const mandrillClient = new Mandrill(apiKey);
     const msg = {
-        "html": inputs.content,
+        "html": inputs.html,
         "subject": inputs.subject,
         "from_email": inputs.from,
         "to": [
