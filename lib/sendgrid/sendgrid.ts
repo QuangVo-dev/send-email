@@ -1,8 +1,6 @@
 import * as sgMail from '@sendgrid/mail'
-import * as SendGridHelper from '@sendgrid/helpers'
-import { MailData } from '@sendgrid/helpers/classes/mail';
 
-export const sendEmailWithSendgrid = async (apiKey: string, inputs: MailData) => {
+export const sendEmailWithSendgrid = async (apiKey: string, inputs: any) => {
     sgMail.setApiKey(apiKey)
     const msg = {
         to: inputs.to,

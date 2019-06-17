@@ -1,8 +1,7 @@
 
 Introduction
 -----
-Easily send email with many services, currently supported send email with sendgrid
-will support mailchimp and gmail, send message with sendgrid in near future
+Send email easily with sendgrid, mandrill and mailgun api
 
 
 Installation
@@ -28,6 +27,10 @@ const email = new MailService({
     mandrill: {
         apiKey: 'mandrill-apikey'
     },
+    mailgun: {
+        apiKey: 'mailgun-apikey',
+        domain: ''
+    }
 });
 
 ...
