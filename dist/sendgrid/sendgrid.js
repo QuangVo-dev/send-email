@@ -18,7 +18,7 @@ exports.sendEmailWithSendgrid = (apiKey, inputs) => __awaiter(this, void 0, void
         html: inputs.html
     };
     try {
-        yield sgMail.send(msg);
+        sgMail.send(msg);
         console.info('Send Email with Sendgrid successfully');
     }
     catch (err) {

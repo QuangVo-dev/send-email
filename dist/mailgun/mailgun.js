@@ -16,6 +16,7 @@ exports.sendEmailWithMailgun = (apiKey, inputs, domain) => {
                 reject(err);
             }
             else {
+                console.info('Send Email with Mailgun successfully');
                 resolve(body);
             }
         });
