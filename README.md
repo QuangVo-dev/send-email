@@ -14,10 +14,15 @@ npm install --save quang-email-service
 Usage
 -----
 In Javascript: 
+```
 const MailService = require('quang-email-service').default
+```
 
 In Typescript:
+```
 import MailService from 'quang-email-service'
+```
+
 
 ```
 const email = new MailService({
